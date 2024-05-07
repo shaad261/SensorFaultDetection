@@ -1,0 +1,15 @@
+seaborn
+pandas
+scikit-learn
+matplotlib
+plotly
+ipykernel
+flask
+dnspython==2.2.1
+database-connect==0.1.66
+pymongo==4.2.0
+python-dotenv==0.21.0
+dill==0.3.5.1
+boto3==1.26.105
+
+

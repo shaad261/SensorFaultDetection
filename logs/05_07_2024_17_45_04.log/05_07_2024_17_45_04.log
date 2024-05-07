@@ -1,0 +1,6 @@
+[ 2024-05-07 17:45:05,757 ] 9 root - INFO - The execution has started
+[ 2024-05-07 17:45:05,757 ] 32 root - INFO - initiated data ingestion
+[ 2024-05-07 17:45:05,757 ] 22 root - INFO - started connecting
+[ 2024-05-07 17:45:22,762 ] 32 root - INFO - connection established
+[ 2024-05-07 17:45:22,950 ] 34 root - INFO - Reading data from database
+[ 2024-05-07 17:45:23,278 ] 42 root - INFO - Data Ingestion is completed

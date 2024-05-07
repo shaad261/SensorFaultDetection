@@ -1,0 +1,4 @@
+[ 2024-05-07 17:32:38,928 ] 9 root - INFO - The execution has started
+[ 2024-05-07 17:33:32,216 ] 30 root - INFO - connection established
+[ 2024-05-07 17:33:32,523 ] 33 root - INFO - Reading data from database
+[ 2024-05-07 17:33:32,523 ] 18 root - INFO - Custom Exception
