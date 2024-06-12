@@ -1,0 +1,9 @@
+[ 2024-06-12 17:11:48,637 ] 160 numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[ 2024-06-12 17:11:49,880 ] 10 root - INFO - The execution has started
+[ 2024-06-12 17:11:49,880 ] 32 root - INFO - initiated data ingestion
+[ 2024-06-12 17:11:49,891 ] 35 root - INFO - Reading data from database
+[ 2024-06-12 17:11:49,935 ] 41 root - INFO - Data Ingestion is completed
+[ 2024-06-12 17:11:49,951 ] 60 root - INFO - get_data_transformer_object1
+[ 2024-06-12 17:11:49,957 ] 30 root - INFO - get_data_transformer_object
+[ 2024-06-12 17:11:49,957 ] 66 root - INFO - get_data_transformer_object2
+[ 2024-06-12 17:11:49,957 ] 24 root - INFO - Custom Exception

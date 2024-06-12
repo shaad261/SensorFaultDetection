@@ -38,7 +38,6 @@ class DataTransformation:
 
             preprocessor = Pipeline(
                 steps=[
-                nan_replacement_step,
                 imputer_step,
                 scaler_step
                 ]
@@ -54,44 +53,47 @@ class DataTransformation:
     def initiate_data_transformation(self, train_path, test_path):
         try:
             train_df = pd.read_csv(train_path)
+            train_df = train_df.fillna(train_df.mean())
 
             test_df = pd.read_csv(test_path)
+            test_df = test_df.fillna(test_df.mean())
             
             logging.info("get_data_transformer_object1")
-            
+            object_columns = [col for col in train_df.columns if train_df[col].dtype == 'object']
             preprocessor = self.get_data_transformer_object()
+            object_columns.append("Good/Bad")
             target_column_name = "Good/Bad"
-            target_column_mapping = {'+1': 0, '-1': 1}
+            target_column_mapping = {+1: 0, -1: 1}
             
             logging.info("get_data_transformer_object2")
 
             #training dataframe
-            input_feature_train_df = train_df.drop(columns=[target_column_name], axis=1)
+            input_feature_train_df = train_df.drop(columns=object_columns, axis=1)
             target_feature_train_df = train_df[target_column_name].map(target_column_mapping)
 
             logging.info("get_data_transformer_object3")
             
             #testing dataframe
-            input_feature_test_df = test_df.drop(columns=[target_column_name], axis=1)
+            input_feature_test_df = test_df.drop(columns=object_columns, axis=1)
             target_feature_test_df = test_df[target_column_name].map(target_column_mapping)
 
             transformed_input_train_feature = preprocessor.fit_transform(input_feature_train_df)
 
             transformed_input_test_feature =preprocessor.transform(input_feature_test_df)
 
-            smt = SMOTETomek(sampling_strategy="minority")
+            smt = SMOTETomek(sampling_strategy="auto")
             
 
             input_feature_train_final, target_feature_train_final = smt.fit_resample(
                 transformed_input_train_feature, target_feature_train_df
             )
 
-            input_feature_test_final, target_feature_test_final = smt.fit_resample(
-                transformed_input_test_feature, target_feature_test_df
-            )
+            # input_feature_test_final, target_feature_test_final = smt.fit_resample(
+            #     transformed_input_test_feature, target_feature_test_df
+            # )
 
             train_arr = np.c_[input_feature_train_final, np.array(target_feature_train_final) ]
-            test_arr = np.c_[ input_feature_test_final, np.array(target_feature_test_final) ]
+            test_arr = np.c_[ transformed_input_test_feature, np.array(target_feature_test_df) ]
 
             save_object(self.data_transformation_config.preprocessor_obj_file_path,
                         obj= preprocessor)
