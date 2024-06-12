@@ -10,6 +10,7 @@ from sklearn.model_selection import train_test_split
 from src.SensorFaultDetection.exception import CustomException
 from src.SensorFaultDetection.logger import logging
 from dotenv import load_dotenv
+import pickle
 
 load_dotenv()
 
@@ -44,10 +45,15 @@ def save_object(file_path, obj):
         os.makedirs(dir_path, exist_ok=True)
 
         with open(file_path, "wb") as file_obj:
-            dill.dump(obj, file_obj)
+            pickle.dump(obj, file_obj)
 
     except Exception as e:
         raise CustomException(e, sys)
+
+
+
+
+
 
 
 def load_object(file_path):
@@ -56,4 +62,4 @@ def load_object(file_path):
             return dill.load(file_obj)
 
     except Exception as e:
-        raise CustomException(e, sys)
+        raise CustomException(e, sys)   

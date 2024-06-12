@@ -1,0 +1,4 @@
+[ 2024-05-09 06:42:05,980 ] 9 root - INFO - The execution has started
+[ 2024-05-09 06:42:05,980 ] 32 root - INFO - initiated data ingestion
+[ 2024-05-09 06:42:05,980 ] 22 root - INFO - started connecting
+[ 2024-05-09 06:42:36,249 ] 18 root - INFO - Custom Exception

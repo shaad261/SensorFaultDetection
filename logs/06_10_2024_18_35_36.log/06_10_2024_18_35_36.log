@@ -1,0 +1,9 @@
+[ 2024-06-10 18:35:37,503 ] 10 root - INFO - The execution has started
+[ 2024-06-10 18:35:37,503 ] 32 root - INFO - initiated data ingestion
+[ 2024-06-10 18:35:37,537 ] 35 root - INFO - Reading data from database
+[ 2024-06-10 18:35:37,601 ] 41 root - INFO - Data Ingestion is completed
+[ 2024-06-10 18:35:37,653 ] 60 root - INFO - get_data_transformer_object1
+[ 2024-06-10 18:35:37,653 ] 30 root - INFO - get_data_transformer_object
+[ 2024-06-10 18:35:37,653 ] 66 root - INFO - get_data_transformer_object2
+[ 2024-06-10 18:35:37,653 ] 72 root - INFO - get_data_transformer_object3
+[ 2024-06-10 18:35:37,754 ] 24 root - INFO - Custom Exception

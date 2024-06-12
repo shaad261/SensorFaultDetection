@@ -30,7 +30,8 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         try:
             logging.info("initiated data ingestion")
-            df=export_collection_as_dataframe(url,coll,db)
+            #df=export_collection_as_dataframe(url,coll,db)
+            df=pd.read_csv(os.path.join('notebooks','data.csv'))
             logging.info("Reading data from database")
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)

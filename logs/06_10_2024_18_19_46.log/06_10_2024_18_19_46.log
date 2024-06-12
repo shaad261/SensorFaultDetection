@@ -1,0 +1,5 @@
+[ 2024-06-10 18:19:57,541 ] 10 root - INFO - The execution has started
+[ 2024-06-10 18:19:57,541 ] 32 root - INFO - initiated data ingestion
+[ 2024-06-10 18:19:57,597 ] 35 root - INFO - Reading data from database
+[ 2024-06-10 18:19:57,715 ] 41 root - INFO - Data Ingestion is completed
+[ 2024-06-10 18:19:57,719 ] 24 root - INFO - Custom Exception
